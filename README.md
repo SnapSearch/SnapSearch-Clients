@@ -6,13 +6,13 @@ Multi-Language HTTP Client Middleware Libraries for SnapSearch (http://snapsearc
 Description
 -----------
 
-Snapsearch is a search engine optimisation (SEO) and robot proxy for complex front-end javascript & AJAX enabled HTML5 web applications.
+Snapsearch is a search engine optimisation (SEO) and robot proxy for complex front-end javascript & AJAX enabled (potentially realtime) HTML5 web applications.
 
 Search engines like Google's crawler and dumb HTTP clients such as Facebook's image extraction robot cannot execute complex javascript applications. Complex javascript applications include websites that utilise AngularJS, EmberJS, KnockoutJS, Dojo, Backbone.js, Ext.js, jQuery, JavascriptMVC, Meteor, SailsJS, Derby, RequireJS and much more. Basically any website that utilises javascript in order to bring in content and resources asynchronously after the page has been loaded, or utilises javascript to manipulate the page's content while the user is viewing them such as animation.
 
 Snapsearch intercepts any requests made by search engines or robots and sends its own javascript enabled robot to extract your page's content and creates a cached snapshot. This snapshot is then passed through your own web application back to the search engine, robot or browser.
 
-Snapsearch's robot is an automated Firefox browser. This Firefox browser is kept up to date with the nightly versions, so we'll always be able to serve the latest in HTML5 technology.
+Snapsearch's robot is an automated load balanced Firefox browser. This Firefox browser is kept up to date with the nightly versions, so we'll always be able to serve the latest in HTML5 technology. Our load balancer ensures your requests won't be hampered by other user's requests.
 
 For more details on how this works and the benefits of usage see http://snapsearch.io
 
@@ -32,7 +32,9 @@ The libraries are highly configurable including:
 
 There's 2 types of libraries included, most of them are libraries that are ran on the application level. However some are ran on the HTTP server level. The libraries in `http_servers` are not as configurable as the application level libraries. You should only use them if your server does not involve any server side programming language.
 
-For specific usage instructions navigate to the top level directories and then to specific frameworks provided. 
+For specific usage and installation instructions navigate to the top level directories and then to specific frameworks provided.
+
+Please submit pull-requests for new libraries and middlewares. We're always happy to have more.
 
 API Documentation for http://snapsearch.io/
 -------------------------------------------
