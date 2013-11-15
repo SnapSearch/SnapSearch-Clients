@@ -25,10 +25,9 @@ These client libraries first automatically detect if an HTTP request comes from 
 
 The libraries are highly configurable including: 
 
-- The list of clients to intercept base on the User Agent. 
-- A list routes and extensions to ignore intercepting (in case you have file downloads)? 
-- Before and after callbacks when requesting from Snapsearch
-- Request parameters to Snapsearch
+- The list of clients to intercept based on the User Agent. 
+- A list routes and extensions to ignore intercepting.
+- Request parameters to Snapsearch.
 
 There's 2 types of libraries included, most of them are libraries that are ran on the application level. However some are ran on the HTTP server level. The libraries in `http_servers` are not as configurable as the application level libraries. You should only use them if your server does not involve any server side programming language.
 
@@ -43,6 +42,9 @@ API documentation can be found here: [ENTER URL FOR API DOCS]
 
 Notes
 -----
+
+### Changing User Agents
+If you change SnapSearch's robot user agent, you need make sure your client library ignores that particular user agent, so it doesn't intercept SnapSearch's robot. This would cause an infinite interception loop. By default the libraries already ignore the default SnapSearch robot.
 
 ### Supporting JS disabled Browsers
 It's not possible to detect if the HTTP client supports Javascript on the first page load. Therefore you have to know the user agents beforehand. A workaround involves the HTML Meta Refresh tag. You set an HTML meta refresh tag which will refresh the browser and point it to the same url but with query parameter indicating to the server that the client doesn't run javascript. This meta refresh tag can be then be cancelled using javascript. Another approach would be to use the Noscript tag and place the meta refresh tag there. None of these methods are guaranteed to work. but if you're interested check out: http://stackoverflow.com/q/3252743/582917
