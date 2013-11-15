@@ -1,5 +1,5 @@
 {
-	"name": "polycademy/snapsearch-client-php-generic",
+	"name": "polycademy/snapsearch-client-php",
 	"description": "PHP HTTP Client Middleware Libraries for SnapSearch",
 	"keywords": ["seo", "search engine optimisation", "javascript", "ajax"],
 	"homepage": "https://github.com/Polycademy/snapsearch_clients",
@@ -18,7 +18,7 @@
 	},
 	"autoload": {
 		"psr-0": {
-			"SnapSearchClient": "src"
+			"SnapSearchClientPHP": "src"
 		}
 	}
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace SnapSearchClient;
+namespace SnapSearchClientPHP;
 
 class UserAgentDetector{
 
@@ -24,11 +24,17 @@ class UserAgentDetector{
 
 	public function detect(){
 
+		if(empty($this->ua)){
+			return false;
+		}
+
 		//first detect ignore, if true, then return false
 
 		//then detect match, if true, then return true
 
 		//if no match at all, return false
+		
+		//empty user agents is also possible so return false
 
 	}
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace SnapSearchClient;
+namespace SnapSearchClientPHP;
 
 use UserAgentDetector;
 use Client;
