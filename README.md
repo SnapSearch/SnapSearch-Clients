@@ -33,7 +33,7 @@ There's 2 types of libraries included, most of them are libraries that are ran o
 
 For specific usage and installation instructions navigate to the top level directories and then to specific frameworks provided.
 
-Please submit pull-requests for new libraries and middlewares. We're always happy to have more.
+Please submit pull-requests for new libraries and middlewares or additions to the list of Robots.json. We're always happy to have more.
 
 API Documentation for http://snapsearch.io/
 -------------------------------------------
@@ -43,11 +43,11 @@ API documentation can be found here: [ENTER URL FOR API DOCS]
 Notes
 -----
 
-### Supporting JS disabled Browsers
-It's not possible to detect if the HTTP client supports Javascript on the first page load. Therefore you have to know the user agents beforehand. A workaround involves the HTML Meta Refresh tag. You set an HTML meta refresh tag which will refresh the browser and point it to the same url but with query parameter indicating to the server that the client doesn't run javascript. This meta refresh tag can be then be cancelled using javascript. Another approach would be to use the Noscript tag and place the meta refresh tag there. None of these methods are guaranteed to work. but if you're interested check out: http://stackoverflow.com/q/3252743/582917
+### Dealing with static files
+If you are using your application to serve static files and therefore not using an HTTP server such as NGINX or Apache, or when you are serving downloads through an application level controller, you need to make sure that these paths are not intercepted by SnapSearch's clients. There are two ways to do this. Firstly SnapSearch's clients can optionally check if the URL path leads directly a real file on the webserver, if so it will not intercept unless that file is on application level file such as (`.php` for PHP applications or `.js` for Node applications). However this will not resolve problems with a download controller. The second way is to set ignored routes that are regular expressions which will be matched to the current url. The second way if far more efficient then the first way because SnapSearch's clients do not have to do a filesystem check, so make sure to ignore routes that go to your static files. None of this is necessary if you are certain that static files will not be served through the application level.
 
-### Ensuring Analytics Works with Snapsearch
-When Snapsearch visits your site, it will come with a UserAgent of "SnapSearch". You can however configure this to your own liking. Use this user agent in order to filter out our requests when using web analytics.
+### SSL issues
+SnapSearch will not be able to capture from sites that have invalid SSL certificates. Make sure your SSL is a valid certificate that will work a normal browser before using SnapSearch. This is on our todo list to fix.
 
 ### Dealing with redirects
 Snapsearch will follow through any redirects and correctly parse the final destination. It works with:
@@ -60,7 +60,13 @@ Snapsearch will follow through any redirects and correctly parse the final desti
 If your site redirects infinitely, Snapsearch will return with an error. The maximum number of redirects is 20 for header redirects and 10 for JS and Meta refresh tag redirects.
 
 ### Dealing with non-html resources
-Snapsearch will not parse non-html resources. It can however parse text based resources.
+SnapSearch will not parse non-html resources. It can however parse text based resources.
+
+### Ensuring Analytics Works with Snapsearch
+When Snapsearch visits your site, it will come with a UserAgent of "SnapSearch". You can however configure this to your own liking. Use this user agent in order to filter out our requests when using web analytics.
 
 ### Large content
-Snapsearch will timeout the request if the initial request to your site and its synchronous resources takes longer than 30 seconds.
+SnapSearch will timeout the request if the initial request to your site and its synchronous resources takes longer than 30 seconds.
+
+### Supporting JS disabled Browsers
+It's not possible to detect if the HTTP client supports Javascript on the first page load. Therefore you have to know the user agents beforehand. A workaround involves the HTML Meta Refresh tag. You set an HTML meta refresh tag which will refresh the browser and point it to the same url but with query parameter indicating to the server that the client doesn't run javascript. This meta refresh tag can be then be cancelled using javascript. Another approach would be to use the Noscript tag and place the meta refresh tag there. None of these methods are guaranteed to work. but if you're interested check out: http://stackoverflow.com/q/3252743/582917
