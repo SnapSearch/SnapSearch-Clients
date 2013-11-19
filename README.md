@@ -33,7 +33,7 @@ There's 2 types of libraries included, most of them are libraries that are ran o
 
 For specific usage and installation instructions navigate to the top level directories and then to specific frameworks provided.
 
-Please submit pull-requests for new libraries and middlewares or additions to the list of Robots.json. We're always happy to have more.
+Please submit pull-requests for new libraries and middlewares or additions to the list of Robots.json. We're always happy to have more. Individual project repositories have their own Robots.json, but you will need to submit pull-requests to this Robots.json so we can distribute it to all of the language bindings.
 
 API Documentation for http://snapsearch.io/
 -------------------------------------------
