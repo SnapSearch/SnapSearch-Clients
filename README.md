@@ -3,6 +3,9 @@ Snapsearch Clients
 
 Multi-Language HTTP Client Middleware Libraries for SnapSearch (http://snapsearch.io)
 
+THERE IS A CHUNKED ENCODING PROBLEM. PERHAPS NOT ALL HEADERS CAN BE SET?
+Only status code and content.
+
 Description
 -----------
 
@@ -66,7 +69,7 @@ You can prevent SnapSearch from intercepting these non-HTML resources by:
 4. In MVC style applications, you may have a single controller which is responsible for displaying the front end code. If you execute our clients inside that particular controller, then you will not have any problems with non-HTML resources, since it can only intercept requests that go to the front end.
 
 ### Hashbang & Pushstate Urls
-Talk about Google's AJAX crawling scheme!
+Talk about Google's AJAX crawling scheme! https://developers.google.com/webmasters/ajax-crawling/docs/specification
 
 ### SSL issues
 SnapSearch will not be able to capture from sites that have invalid SSL certificates. Make sure your SSL is a valid certificate that will work a normal browser before using SnapSearch. This is on our todo list to fix.
