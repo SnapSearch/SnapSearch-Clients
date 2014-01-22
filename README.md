@@ -1,10 +1,7 @@
 Snapsearch Clients
 ==================
 
-Multi-Language HTTP Client Middleware Libraries for SnapSearch (http://snapsearch.io)
-
-THERE IS A CHUNKED ENCODING PROBLEM. PERHAPS NOT ALL HEADERS CAN BE SET?
-Only status code and content.
+Multi-Language HTTP Client Middleware Libraries for SnapSearch (https://snapsearch.io/)
 
 Description
 -----------
@@ -17,14 +14,14 @@ Snapsearch intercepts any requests made by search engines or robots and sends it
 
 Snapsearch's robot is an automated load balanced Firefox browser. This Firefox browser is kept up to date with the nightly versions, so we'll always be able to serve the latest in HTML5 technology. Our load balancer ensures your requests won't be hampered by other user's requests.
 
-For more details on how this works and the benefits of usage see http://snapsearch.io
+For more details on how this works and the benefits of usage see https://snapsearch.io/
 
 Usage
 -----
 
-Make sure to register an account on SnapSearch before utilising these libraries.
+Make sure to register an account on SnapSearch before utilising these libraries. You will need your email and key to access SnapSearch's robot over SSL encrypted HTTP Basic Authorization.
 
-These client libraries first automatically detect if an HTTP request comes from a search engine or robot. If it is indeed a search engine, it sends an HTTP POST request to http://snapsearch.io/ passing in parameters configuring how SnapSearch's robot should extract your content. SnapSearch will then send a HTTP GET request to the same URL and return the HTTP response (headers and content) as a JSON response to the library. The client library then returns that data back to the search engine.
+These client libraries first automatically detect if an HTTP request comes from a search engine or robot. If it is indeed a search engine, it sends an HTTP POST request to https://snapsearch.io/ passing in parameters configuring how SnapSearch's robot should extract your content. SnapSearch will then send a HTTP GET request to the same URL and return the HTTP response (status code, headers and content) as a JSON response to the library. The client library then returns that data back to your application. You will have to select which data to present to the search engine. It is recommended to return the status code and content but not the headers, due to potential header mismatch with content encoding. However if you have specific headers that are important, then first test if it works with a simple HTTP client before deploying it.
 
 The libraries are highly configurable including: 
 
@@ -32,7 +29,7 @@ The libraries are highly configurable including:
 - A list routes and extensions to ignore intercepting.
 - Request parameters to Snapsearch.
 
-There's 2 types of libraries included, most of them are libraries that are ran on the application level. However some are ran on the HTTP server level. The libraries in `http_servers` are not as configurable as the application level libraries. You should only use them if your server does not involve any server side programming language.
+All of the libraries that are ran on the application level requiring a server side programming language.
 
 For specific usage and installation instructions navigate to the top level directories and then to specific frameworks provided.
 
@@ -44,10 +41,10 @@ To update this repository and all submodule repositories run `git submodule fore
 
 To push changes to submodules, make sure to pull in the latest from the submodules and then `git push --recurse-submodules=on-demand`.
 
-API Documentation for http://snapsearch.io/
+API Documentation for https://snapsearch.io/
 -------------------------------------------
 
-API documentation can be found here: [ENTER URL FOR API DOCS]
+API documentation can be found here: https://snapsearch.io/docs
 
 Notes
 -----
@@ -99,4 +96,4 @@ Soft 404s should be avoided. We believe that the final representation to the sea
 ### API Limits
 You should select a plan that best matches your estimates for the number of "crawls" that search engine robots execute on your site. The number of crawls can be estimated by getting the average monthly number of crawls from the relevant search engines. This information can be extracted from the web master tools or server side analytics that track robots. Google analytics or javascript based analytics cannot be used since most search engines do not execute javascript. For example, let's take the 3 largest international search engines, that is Google, Bing and Yahoo. To get Google's crawl rate, you need to have your webmaster tools setup and check the Crawl Stats. This will give you the monthly crawl rate. Then go to Bing's webmaster tools and check the Crawl Information. This will give the monthly crawl rate that is combined from Bing and Yahoo. Add these 2 up and you get a good estimate. Now there are other search engines involved, but it may be difficult to get crawl statistics. For each crawler you want to satisfy you'll need to take the average monthly visits between each crawler and multiply them by the number of crawlers you want to satisfy. These crawl rates can change quickly, so check often to see if you're hitting your limits.
 
-Cached pages can be free. Number of pages is unlimited. API limits is on fresh requests. You may need to specify limits on size. Which can be like 50mb or something. 50mb = 50000 kb which equals about 3500 pages.
+Cached pages can be free. Number of pages is unlimited. API limits is on fresh requests.
