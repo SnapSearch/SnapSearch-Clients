@@ -35,7 +35,7 @@ For specific usage and installation instructions navigate to the top level direc
 
 Please submit pull-requests for new libraries and middlewares or additions to the list of Robots.json. We're always happy to have more. Individual project repositories have their own Robots.json, but you will need to submit pull-requests to this Robots.json so we can distribute it to all of the language bindings.
 
-You can clone this repository and all the submodule repositories by running `git clone --recursive https://github.com/Polycademy/Snapsearch-Clients.git`. Older git versions see: http://stackoverflow.com/q/3796927/582917
+You can clone this repository and all the submodule repositories by running `git clone --recursive https://github.com/SnapSearch/Snapsearch-Clients.git`. Older git versions see: http://stackoverflow.com/q/3796927/582917
 
 To update this repository and all submodule repositories run `git submodule foreach git pull origin master`.
 
