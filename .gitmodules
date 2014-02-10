@@ -1,3 +1,6 @@
-[submodule "php/SnapSearch-Client-PHP"]
-	path = php/SnapSearch-Client-PHP
-	url = https://github.com/Polycademy/SnapSearch-Client-PHP.git
+[submodule "node/SnapSearch-Client-PHP"]
+    path = php/SnapSearch-Client-PHP
+    url = https://github.com/SnapSearch/SnapSearch-Client-PHP.git
+[submodule "node/SnapSearch-Client-Node"]
+	path = node/SnapSearch-Client-Node
+	url = https://github.com/SnapSearch/SnapSearch-Client-Node.git
