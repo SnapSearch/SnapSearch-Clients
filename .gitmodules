@@ -4,3 +4,6 @@
 [submodule "node/SnapSearch-Client-Node"]
 	path = node/SnapSearch-Client-Node
 	url = https://github.com/SnapSearch/SnapSearch-Client-Node.git
+[submodule "ruby/SnapSearch-Client-Ruby"]
+	path = ruby/SnapSearch-Client-Ruby
+	url = https://github.com/SnapSearch/SnapSearch-Client-Ruby.git
