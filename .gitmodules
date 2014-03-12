@@ -7,3 +7,6 @@
 [submodule "ruby/SnapSearch-Client-Ruby"]
 	path = ruby/SnapSearch-Client-Ruby
 	url = https://github.com/SnapSearch/SnapSearch-Client-Ruby.git
+[submodule "python/SnapSearch-Client-Python"]
+	path = python/SnapSearch-Client-Python
+	url = https://github.com/SnapSearch/SnapSearch-Client-Python.git
