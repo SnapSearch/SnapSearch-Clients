@@ -25,7 +25,7 @@ All of the libraries that are ran on the application level requiring a server si
 
 For specific usage and installation instructions navigate to the specific middleware submodules.
 
-Please submit pull-requests for new middlewares or additions to the `robots.json`. We're always happy to have more. Individual project repositories have their own `robots.json`, but you will need to submit pull-requests to this `robots.json` so we can distribute it to all of the language bindings.
+We welcome pull-requests for new middlewares or additions to the `resources/robots.json` or `resources/extensions.json`. Individual project repositories have their own `resources/robots.json` and `resources/extensions.json`, but you will need to submit pull-requests to this repository so we can distribute it to all of the language bindings.
 
 Documentation
 -------------
